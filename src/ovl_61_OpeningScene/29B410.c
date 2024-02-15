@@ -219,7 +219,12 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCDCC_2A1BFC);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCE9C_2A1CCC);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCECC_2A1CFC);
+void func_800FCECC_2A1CFC(u8 arg0, u8 arg1, u8 arg2, u8 arg3) {
+    D_800FD780[2] = arg0;
+    D_800FD780[3] = arg1;
+    D_800FD780[4] = arg2;
+    D_800FD780[5] = arg3;
+}
 
 extern f32 D_800FD794;
 

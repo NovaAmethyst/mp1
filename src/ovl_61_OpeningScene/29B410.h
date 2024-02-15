@@ -15,3 +15,4 @@ extern s32 D_80110448[];
 extern s32 D_80110460;
 extern unkGlobalStruct_00* D_80110450;
 void func_800F6788_29B5B8(unkObjectStruct*);
+extern u8 D_800FD780[];
