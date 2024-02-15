@@ -150,7 +150,10 @@ Object* func_800FBCC0_2A0AF0(s32 arg0, void* arg1) {
 }
 
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBD14_2A0B44);
+//INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBD14_2A0B44);
+unkObjectStruct* func_800FBD14_2A0B44(unkObjectStruct* arg0, s32 arg1, f32 arg2) {
+    return func_8004E3E0(0, arg1, arg2, arg0);
+}
 
 void func_800FBD48_2A0B78(s32 arg0, s32 arg1, f32 arg2) {
     func_8004EE14(0, arg1, arg2, arg0);
