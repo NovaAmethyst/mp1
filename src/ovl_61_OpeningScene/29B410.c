@@ -197,7 +197,9 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC394_2A11C4);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC48C_2A12BC);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC4C0_2A12F0);
+void func_800FC4C0_2A12F0(f32 arg0, f32 arg1, f32 arg2) {
+    func_800A0D00(&D_800FD6DC, arg0, arg1, arg2);
+}
 
 void func_800FC4F4_2A1324(f32 arg0, f32 arg1, f32 arg2) {
     func_800A0D00(&D_800FD6E8, arg0, arg1, arg2);

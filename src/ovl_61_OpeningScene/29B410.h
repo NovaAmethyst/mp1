@@ -17,3 +17,4 @@ extern unkGlobalStruct_00* D_80110450;
 void func_800F6788_29B5B8(unkObjectStruct*);
 extern u8 D_800FD780[];
 extern unkGlobalStruct_00 D_800FD6E8; // Need to check type
+extern unkGlobalStruct_00 D_800FD6DC; // Need to check type
