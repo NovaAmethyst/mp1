@@ -19,3 +19,4 @@ extern u8 D_800FD780[];
 extern unkGlobalStruct_00 D_800FD6D0; // Need to check type
 extern unkGlobalStruct_00 D_800FD6DC; // Need to check type
 extern unkGlobalStruct_00 D_800FD6E8; // Need to check type
+extern unkGlobalStruct_00 D_800FD702; // Need to check type
