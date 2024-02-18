@@ -20,3 +20,11 @@ extern unkGlobalStruct_00 D_800FD6D0; // Need to check type
 extern unkGlobalStruct_00 D_800FD6DC; // Need to check type
 extern unkGlobalStruct_00 D_800FD6E8; // Need to check type
 extern unkGlobalStruct_00 D_800FD702; // Need to check type
+
+typedef struct unkOpeningScene_00 {
+    /* 0x00 */ s16 unk_00;
+    /* 0x02 */ char unk_02[6];
+    /* 0x08 */ s16 unk_08;
+    /* 0x0A */ char unk_0A[2];
+    /* 0x0C */ s32 unk_0C;
+} unkOpeningScene_00;
