@@ -18,7 +18,7 @@ void func_800F65E0_29B410(void) {
     func_80060088();
     func_8006CEA0();
     func_8005AD18();
-    
+
     sp18 = D_800FD4A0;
     sp28 = D_800FD4AC;
 
@@ -38,21 +38,21 @@ void func_800F65E0_29B410(void) {
 
 void func_800F6788_29B5B8(unkObjectStruct* arg0) {
     s32 pad[2]; //required to match stack alignment
-    
+
     if (arg0->unk_4C[1] != 0) {
         arg0->unk_4C[1]--;
         return;
     }
-    
+
     arg0->unk_4C[0]++;
-    
+
     if (arg0->unk_4C[0] >= 7) {
         arg0->unk_4C[0] = 0;
     }
-    
+
     arg0->unk_4C[1] = 0x50;
-    
-    func_800FBD48_2A0B78(D_80110460, D_80110448[arg0->unk_4C[0]] + 12, 40.0f);
+
+    func_800FBD48_2A0B78(D_80110460[0], D_80110448[arg0->unk_4C[0]] + 1, 40.0f);
 }
 
 unkObjectStruct* func_800F6804_29B634(unkGlobalStruct_00* arg0) {
@@ -70,7 +70,23 @@ unkObjectStruct* func_800F6804_29B634(unkGlobalStruct_00* arg0) {
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F68D4_29B704);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F69F0_29B820);
+//INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F69F0_29B820);
+unkObjectStruct* func_800F69F0_29B820(void) {
+    unkObjectStruct* temp_s0;
+    unkOpeningScene_01** temp_s1;
+
+    temp_s0 = func_8005D384(0x1000, 0, 0, -1, func_800F68D4_29B704);
+    temp_s1 = &D_80110460[0];
+    func_800A0E80(&temp_s1[0]->unk_18, D_800FD6D0, &temp_s1[0]->unk_0C);
+    func_8005D96C(temp_s0, 0.0f, 0.0f, 0.0f);
+    func_8005D97C(temp_s0, D_80110460[0]->unk_0C.x, D_80110460[0]->unk_0C.y, D_80110460[0]->unk_0C.z);
+    func_8005D95C(temp_s0, D_80110460[0]->unk_18.x, D_80110460[0]->unk_18.y, D_80110460[0]->unk_18.z);
+
+    temp_s0->unk_4C[0] = 6;
+    temp_s0->unk_50 = temp_s1[0];
+
+    return temp_s0;
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F6AB8_29B8E8);
 
@@ -150,11 +166,11 @@ Object* func_800FBCC0_2A0AF0(s32 arg0, void* arg1) {
 }
 
 
-unkObjectStruct* func_800FBD14_2A0B44(unkObjectStruct* arg0, s32 arg1, f32 arg2) {
+unkObjectStruct* func_800FBD14_2A0B44(unkObjectStruct* arg0, Vec3f* arg1, f32 arg2) {
     return func_8004E3E0(0, arg1, arg2, arg0);
 }
 
-void func_800FBD48_2A0B78(s32 arg0, s32 arg1, f32 arg2) {
+void func_800FBD48_2A0B78(void* arg0, Vec3f* arg1, f32 arg2) {
     func_8004EE14(0, arg1, arg2, arg0);
 }
 
