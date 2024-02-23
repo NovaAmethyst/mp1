@@ -138,11 +138,20 @@ void func_800FB864_2A0694(void) {
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB86C_2A069C);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB91C_2A074C);
+void func_800FB91C_2A074C(void) {
+    if (func_80072718() != 0) {
+        return;
+    }
+    func_80070ED4();
+    func_800FBB94_2A09C4();
+    func_800FBC9C_2A0ACC();
+    func_800FC394_2A11C4(1);
+    D_800F5144 = 1;
+    func_8005E044(0x67, 1, 0x91);
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB97C_2A07AC);
 
-s32 func_800FC394_2A11C4(s32);
 void func_8004B1B8(void);
 
 s32 func_800FBAC0_2A08F0(void) {
