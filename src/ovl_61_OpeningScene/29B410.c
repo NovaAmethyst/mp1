@@ -115,16 +115,19 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB670_2A04A0);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB79C_2A05CC);
 
-extern Vec3f D_800FD6F4;
+extern Vec3f D_800FD6D0[];
 
 void func_800FB7F8_2A0628(f32 x, f32 y, f32 z) {
-    D_800FD6F4.x = x;
-    D_800FD6F4.y = y;
-    D_800FD6F4.z = z;
+    D_800FD6D0[3].x = x;
+    D_800FD6D0[3].y = y;
+    D_800FD6D0[3].z = z;
 }
 
-
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB810_2A0640);
+void func_800FB810_2A0640(unkObjectStruct* arg) {
+    func_8001D494(0, D_800FD6D0[3].x, D_800FD6D0[3].y, D_800FD6D0[3].z);
+    func_8001D420(0, &D_800FD6D0[0], &D_800FD6D0[1], &D_800FD6D0[2]);
+    func_8001D57C(0);
+}
 
 void func_800FB864_2A0694(void) {
 }
