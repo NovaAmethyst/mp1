@@ -14,6 +14,11 @@ typedef struct unkOpeningScene_01 {
     /* 0x18 */ Vec3f unk_18;
 } unkOpeningScene_01;
 
+typedef struct unkOpeningScene_02 {
+    /* 0x00 */ s16 unk_00;
+    /* 0x02 */ char unk_02[0x1A];
+} unkOpeningScene_02; // sizeof 0x1C
+
 void func_800FB670_2A04A0(Vec3s*, Vec3s*, f32);
 void func_800FB7F8_2A0628(f32, f32, f32);
 void func_800FB810_2A0640(unkObjectStruct*);
