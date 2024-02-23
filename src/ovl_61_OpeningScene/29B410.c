@@ -113,7 +113,11 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB608_2A0438);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB670_2A04A0);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB79C_2A05CC);
+void func_800FB79C_2A05CC(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2) {
+    func_800FC48C_2A12BC(arg0->x, arg0->y, arg0->z);
+    func_800FC4C0_2A12F0(arg1->x, arg1->y, arg1->z);
+    func_800FC4F4_2A1324(arg2->x, arg2->y, arg2->z);
+}
 
 extern Vec3f D_800FD6D0[];
 
