@@ -109,7 +109,16 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB358_2A0188);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB40C_2A023C);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB608_2A0438);
+void func_800FB608_2A0438(void) {
+    s32 i;
+
+    EndProcess(D_800FD730[0]);
+    func_8002456C(D_800FD708);
+
+    for (i = 0; i < 6; ++i) {
+        func_8002456C(D_800FD710[i]);
+    }
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB670_2A04A0);
 
