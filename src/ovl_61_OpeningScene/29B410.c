@@ -238,7 +238,14 @@ void func_800FC134_2A0F64(unkOpeningScene_00* arg) {
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC17C_2A0FAC);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC1F0_2A1020);
+void func_800FC1F0_2A1020(unkOpeningScene_00* arg0, Vec3f* arg1) {
+    func_80025830(arg0->unk_00, arg1->x, arg1->y, arg1->z);
+    func_800A0D00(arg0 + 1, arg1->x, arg1->y, arg1->z);
+
+    if (arg0->unk_08 != -1) {
+        func_80025830(arg0->unk_08, arg1->x, arg1->y, arg1->z);
+    }
+}
 
 void func_800FC264_2A1094(unkOpeningScene_02* arg0, Vec3f* arg1) {
     func_800257E4(arg0->unk_00, arg1->x, arg1->y, arg1->z);

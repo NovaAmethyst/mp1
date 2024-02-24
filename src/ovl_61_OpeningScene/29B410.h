@@ -6,7 +6,8 @@ typedef struct unkOpeningScene_00 {
     /* 0x08 */ s16 unk_08;
     /* 0x0A */ char unk_0A[2];
     /* 0x0C */ s32 unk_0C;
-} unkOpeningScene_00;
+    /* 0x10 */ char unk_10[0x18];
+} unkOpeningScene_00; // sizeof 0x28
 
 typedef struct unkOpeningScene_01 {
     /* 0x00 */ char unk_00[0x0C];
