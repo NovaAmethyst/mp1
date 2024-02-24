@@ -290,7 +290,15 @@ void func_800FC4F4_2A1324(f32 arg0, f32 arg1, f32 arg2) {
     func_800A0D00(&D_800FD6E8, arg0, arg1, arg2);
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC528_2A1358);
+s32 func_800FC528_2A1358(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
+    s32 temp_s0;
+
+    temp_s0 = func_8006D010(arg0, arg1, 11 * arg2 + 8, 14 * arg3 + 6, 0, 0);
+    func_8006E070(temp_s0, 0);
+    func_8006E154(temp_s0, 0xC8);
+    func_800717C0(temp_s0);
+    return temp_s0;
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC5CC_2A13FC);
 
