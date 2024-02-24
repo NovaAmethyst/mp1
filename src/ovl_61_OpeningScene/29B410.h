@@ -23,9 +23,7 @@ typedef struct unkOpeningScene_03 {
     /* 0x00 */ s16 unk_00;
     /* 0x02 */ char unk_02[6];
     /* 0x08 */ s16 unk_08;
-    /* 0x0A */ char unk_0A[2];
-    /* 0x0C */ s32 unk_0C;
-    /* 0x10 */ char unk_10[0x18];
+    /* 0x0A */ char unk_0A[0x1E];
 } unkOpeningScene_03; // sizeof 0x28
 
 void func_800FB670_2A04A0(Vec3s*, Vec3s*, f32);
@@ -48,6 +46,9 @@ extern s16 D_800FD710[];
 extern Process* D_800FD730[];
 void func_800FB86C_2A069C(void);
 void func_800FBD48_2A0B78(void*, Vec3f*, f32);
+extern s32 D_801102B8[];
+extern s32 D_80110300[];
+extern s32 D_80110400[];
 extern Vec3f* D_80110448[];
 extern unkGlobalStruct_00* D_80110450;
 extern unkOpeningScene_01* D_80110460[];

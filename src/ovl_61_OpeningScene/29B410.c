@@ -171,7 +171,23 @@ s32 func_800FBAC0_2A08F0(void) {
     return 1;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBAFC_2A092C);
+s32 func_800FBAFC_2A092C(void) {
+    s32 i;
+
+    func_8003DAA8();
+    func_8004FB14();
+    func_8004E154();
+    func_8004F2AC();
+    func_8004F548();
+
+    for (i = 0; i < 16; ++i) {
+        D_801102B8[i] = -1;
+        D_80110300[i] = 0;
+        D_80110448[i] = NULL;
+        D_80110400[i] = 0;
+    }
+    return 16;
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBB94_2A09C4);
 
@@ -188,7 +204,6 @@ Object* func_800FBCC0_2A0AF0(s32 arg0, void* arg1) {
     func_80025F60(*temp_v0->unk_40->unk_40, 0x400);
     return temp_v0;
 }
-
 
 unkObjectStruct* func_800FBD14_2A0B44(unkObjectStruct* arg0, Vec3f* arg1, f32 arg2) {
     return func_8004E3E0(0, arg1, arg2, arg0);
@@ -236,7 +251,6 @@ void func_800FC134_2A0F64(unkOpeningScene_00* arg) {
     }
 }
 
-//INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC17C_2A0FAC);
 void func_800FC17C_2A0FAC(unkOpeningScene_00* arg0, Vec3f* arg1) {
     func_80025798(arg0->unk_00, arg1->x, arg1->y, arg1->z);
     func_800A0D00(arg0 + 1, arg1->x, arg1->y, arg1->z);
