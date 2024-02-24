@@ -6,8 +6,7 @@ typedef struct unkOpeningScene_00 {
     /* 0x08 */ s16 unk_08;
     /* 0x0A */ char unk_0A[2];
     /* 0x0C */ s32 unk_0C;
-    /* 0x10 */ char unk_10[0x18];
-} unkOpeningScene_00; // sizeof 0x28
+} unkOpeningScene_00; // sizeof 0x10
 
 typedef struct unkOpeningScene_01 {
     /* 0x00 */ char unk_00[0x0C];
@@ -19,6 +18,15 @@ typedef struct unkOpeningScene_02 {
     /* 0x00 */ s16 unk_00;
     /* 0x02 */ char unk_02[0x1A];
 } unkOpeningScene_02; // sizeof 0x1C
+
+typedef struct unkOpeningScene_03 {
+    /* 0x00 */ s16 unk_00;
+    /* 0x02 */ char unk_02[6];
+    /* 0x08 */ s16 unk_08;
+    /* 0x0A */ char unk_0A[2];
+    /* 0x0C */ s32 unk_0C;
+    /* 0x10 */ char unk_10[0x18];
+} unkOpeningScene_03; // sizeof 0x28
 
 void func_800FB670_2A04A0(Vec3s*, Vec3s*, f32);
 void func_800FB7F8_2A0628(f32, f32, f32);
