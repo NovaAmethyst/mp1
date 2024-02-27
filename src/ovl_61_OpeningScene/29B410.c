@@ -304,7 +304,22 @@ void func_800FC2B8_2A10E8(Vec3f* arg0, Vec3f* arg1, f32 arg2, void* arg3) {
                   sp10.z * arg2 + arg0->z);
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC394_2A11C4);
+void func_800FC394_2A11C4(s32 arg) {
+    switch (arg) {
+    case 0:
+        func_80017660(0, 0.0f, 50.0f, 320.0f, 170.0f);
+        func_800176C4(0, 640.0f, 480.0f, 511.0f, 640.0f, 432.0f, 511.0f);
+        break;
+    case 1:
+        func_80017660(0, 0.0f, 0.0f, 320.0f, 240.0f);
+        func_800176C4(0, 640.0f, 480.0f, 511.0f, 640.0f, 480.0f, 511.0f);
+        break;
+    default:
+        func_80017660(0, 0.0f, 24.0f, 320.0f, 196.0f);
+        func_800176C4(0, 640.0f, 480.0f, 511.0f, 640.0f, 432.0f, 511.0f);
+        break;
+    }
+}
 
 void func_800FC48C_2A12BC(f32 arg0, f32 arg1, f32 arg2) {
     func_800A0D00(&D_800FD6D0, arg0, arg1, arg2);
