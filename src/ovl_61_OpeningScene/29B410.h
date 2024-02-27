@@ -36,6 +36,7 @@ void func_800FC394_2A11C4(s32);
 void func_800FC48C_2A12BC(f32, f32, f32);
 void func_800FC4C0_2A12F0(f32, f32, f32);
 void func_800FC4F4_2A1324(f32, f32, f32);
+void func_800FC758_2A1588(void);
 void func_800FCECC_2A1CFC(u8, u8, u8, u8);
 extern s16 D_800C5972;
 extern s16 D_800C59A6;

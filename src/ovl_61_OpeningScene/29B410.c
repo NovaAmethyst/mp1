@@ -337,7 +337,7 @@ void func_800FC5CC_2A13FC(void* arg0, s32 arg1) {
     LoadStringIntoWindow(D_800FD702[0], arg0, -1, -1);
 
     if (arg1 == -1) {
-        while (func_8006FCC0(D_800FD702[0])) {
+        while (func_8006FCC0(D_800FD702[0]) != 0) {
             SleepVProcess();
         }
     } else if (arg1 > 0) {
@@ -345,7 +345,17 @@ void func_800FC5CC_2A13FC(void* arg0, s32 arg1) {
     }
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC6BC_2A14EC);
+void func_800FC6BC_2A14EC(void* arg0, s32 arg1) {
+    func_800FC5CC_2A13FC(arg0, 0);
+    if (arg1 == 0) {
+        while (func_8006FCC0(D_800FD702[0]) != 0) {
+            SleepVProcess();
+        }
+    } else {
+        SleepProcess(arg1);
+    }
+    func_800FC758_2A1588();
+}
 
 void func_800FC724_2A1554(void) {
     func_8006EB40(D_800FD702[0]);
