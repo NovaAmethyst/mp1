@@ -42,6 +42,7 @@ extern s16 D_800C59A6;
 extern s8 D_800F64F2;
 extern Vec3s D_800FD4A0;
 extern Vec3s D_800FD4AC;
+extern s32 D_800FD700;
 extern u16 D_800FD708;
 extern s16 D_800FD710[];
 extern Process* D_800FD730[];
@@ -58,4 +59,4 @@ extern u8 D_800FD780[];
 extern Vec3f D_800FD6D0[]; // Need to check type
 extern unkGlobalStruct_00 D_800FD6DC; // Need to check type
 extern unkGlobalStruct_00 D_800FD6E8; // Need to check type
-extern unkGlobalStruct_00 D_800FD702; // Need to check type
+extern s16 D_800FD702[]; // Need to check type

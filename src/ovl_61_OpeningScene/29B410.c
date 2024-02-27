@@ -328,16 +328,28 @@ s32 func_800FC528_2A1358(s16 arg0, s16 arg1, s32 arg2, s32 arg3) {
     return temp_s0;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC5CC_2A13FC);
+void func_800FC5CC_2A13FC(void* arg0, s32 arg1) {
+    D_800FD700 = func_800FC528_2A1358(0x18, 0xB4, 0x18, 0x2);
+    func_8006E2B8(D_800FD702[0], 0, 0, 0);
+    func_800714F0(D_800FD702[0], 0xFF, 0xFF, 0xFF);
+    func_8006E154(D_800FD702[0], 0);
+    func_8006E288(D_800FD702[0], 7);
+    LoadStringIntoWindow(D_800FD702[0], arg0, -1, -1);
+
+    if (arg1 == -1) {
+        while (func_8006FCC0(D_800FD702[0])) {
+            SleepVProcess();
+        }
+    } else if (arg1 > 0) {
+        SleepProcess(arg1);
+    }
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC6BC_2A14EC);
 
 void func_800FC724_2A1554(void) {
-    unkGlobalStruct_00* temp_s0;
-
-    temp_s0 = &D_800FD702;
-    func_8006EB40(temp_s0->unk_00);
-    func_80070D90(temp_s0->unk_00);
+    func_8006EB40(D_800FD702[0]);
+    func_80070D90(D_800FD702[0]);
 }
 
 void func_800FC758_2A1588(void) {
