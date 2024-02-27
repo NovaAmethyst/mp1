@@ -200,14 +200,36 @@ s32 func_800FBAFC_2A092C(void) {
 
     for (i = 0; i < 16; ++i) {
         D_801102B8[i] = -1;
-        D_80110300[i] = 0;
+        D_80110300[i] = NULL;
         D_80110448[i] = NULL;
-        D_80110400[i] = 0;
+        D_80110400[i] = NULL;
     }
     return 16;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBB94_2A09C4);
+void func_800FBB94_2A09C4(void) {
+    s32 i;
+
+    func_800FBD7C_2A0BAC();
+    for (i = 0; i < 16; ++i) {
+        if (D_801102B8[i] != -1) {
+            func_8002456C(D_801102B8[i]);
+            D_801102B8[i] = -1;
+        }
+        if (D_80110300[i] != NULL) {
+            func_8005D718(D_80110300[i]);
+            D_80110300[i] = NULL;
+        }
+        if (D_80110448[i] != NULL) {
+            DestroyObject(D_80110448[i]);
+            D_80110448[i] = NULL;
+        }
+        if (D_80110400[i] != NULL) {
+            func_800427D4(D_80110400[i]);
+            D_80110400[i] = NULL;
+        }
+    }
+}
 
 void func_800FBC9C_2A0ACC(void) {
     func_8004A140();

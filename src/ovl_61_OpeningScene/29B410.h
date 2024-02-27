@@ -29,6 +29,7 @@ typedef struct unkOpeningScene_03 {
 void func_800FB670_2A04A0(Vec3s*, Vec3s*, f32);
 void func_800FB7F8_2A0628(f32, f32, f32);
 void func_800FB810_2A0640(unkObjectStruct*);
+void func_800FBD7C_2A0BAC(void);
 void func_800F68D4_29B704(unkObjectStruct*);
 void func_800FBB94_2A09C4(void);
 void func_800FBC9C_2A0ACC(void);
@@ -50,8 +51,8 @@ extern Process* D_800FD730[];
 void func_800FB86C_2A069C(void);
 void func_800FBD48_2A0B78(void*, Vec3f*, f32);
 extern s32 D_801102B8[];
-extern s32 D_80110300[];
-extern s32 D_80110400[];
+extern void* D_80110300[];
+extern void* D_80110400[];
 extern Vec3f* D_80110448[];
 extern unkGlobalStruct_00* D_80110450;
 extern unkOpeningScene_01* D_80110460[];
