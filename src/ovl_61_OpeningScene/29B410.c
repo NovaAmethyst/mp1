@@ -259,12 +259,42 @@ void func_800FBD7C_2A0BAC(void) {
     func_8004E184();
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBD98_2A0BC8);
+//INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBD98_2A0BC8);
+s16 func_800FBD98_2A0BC8(unkOpeningScene_00* arg0, s32 arg1, s32 arg2, Vec3f* arg3, s32 arg4) {
+    Vec3f sp10;
+    Vec3f sp20;
+    u16 temp_s3;
+
+    temp_s3 = arg4;
+    sp10 = D_800FD520;
+    sp20 = D_800FD4DC;
+    arg0->unk_00 = LoadFormFile(arg1, 0x2A9);
+    arg0->unk_04 = arg0;
+
+    if (arg4 & 2) {
+        func_80025F60(arg0[1].unk_00, 0x800);
+        arg0[1].unk_00 = LoadFormFile(0x20, 0x629);
+        arg0[1].unk_04 = arg0 + 1;
+    } else {
+        arg0[1].unk_00 = -1;
+        arg0[1].unk_04 = NULL;
+    }
+
+    func_800FC17C_2A0FAC(arg0, arg3);
+    func_800FC1F0_2A1020(arg0, &sp10);
+    func_800FC264_2A1094(arg0, &sp20);
+
+    if (temp_s3 & 1) {
+        func_80025B34(arg0->unk_00);
+    }
+
+    return arg0->unk_00;
+}
 
 s32 func_800FBEA8_2A0CD8(unkOpeningScene_00* arg) {
     func_8002456C(arg->unk_00);
-    if (arg->unk_0C != 0) {
-        func_8002456C(arg->unk_08);
+    if (arg[1].unk_04 != 0) {
+        func_8002456C(arg[1].unk_00);
     }
     return 0;
 }
@@ -286,32 +316,32 @@ void func_800FC110_2A0F40(unkObjectStruct* arg) {
 
 void func_800FC134_2A0F64(unkOpeningScene_00* arg) {
     func_800258EC(arg->unk_00, 4, 4);
-    if (arg->unk_0C != 0) {
-        func_800258EC(arg->unk_08, 4, 4);
+    if (arg[1].unk_04 != 0) {
+        func_800258EC(arg[1].unk_00, 4, 4);
     }
 }
 
 void func_800FC17C_2A0FAC(unkOpeningScene_00* arg0, Vec3f* arg1) {
     func_80025798(arg0->unk_00, arg1->x, arg1->y, arg1->z);
-    func_800A0D00(arg0 + 1, arg1->x, arg1->y, arg1->z);
+    func_800A0D00(arg0 + 2, arg1->x, arg1->y, arg1->z);
 
-    if (arg0->unk_08 != -1) {
-        func_80025798(arg0->unk_08, arg1->x, arg1->y, arg1->z);
+    if (arg0[1].unk_00 != -1) {
+        func_80025798(arg0[1].unk_00, arg1->x, arg1->y, arg1->z);
     }
 }
 
-void func_800FC1F0_2A1020(unkOpeningScene_03* arg0, Vec3f* arg1) {
+void func_800FC1F0_2A1020(unkOpeningScene_00* arg0, Vec3f* arg1) {
     func_80025830(arg0->unk_00, arg1->x, arg1->y, arg1->z);
-    func_800A0D00(arg0 + 1, arg1->x, arg1->y, arg1->z);
+    func_800A0D00(arg0 + 5, arg1->x, arg1->y, arg1->z);
 
-    if (arg0->unk_08 != -1) {
-        func_80025830(arg0->unk_08, arg1->x, arg1->y, arg1->z);
+    if (arg0[1].unk_00 != -1) {
+        func_80025830(arg0[1].unk_00, arg1->x, arg1->y, arg1->z);
     }
 }
 
-void func_800FC264_2A1094(unkOpeningScene_02* arg0, Vec3f* arg1) {
+void func_800FC264_2A1094(unkOpeningScene_00* arg0, Vec3f* arg1) {
     func_800257E4(arg0->unk_00, arg1->x, arg1->y, arg1->z);
-    func_800A0D00(++arg0, arg1->x, arg1->y, arg1->z);
+    func_800A0D00(&arg0[3].unk_04, arg1->x, arg1->y, arg1->z);
 }
 
 void func_800FC2B8_2A10E8(Vec3f* arg0, Vec3f* arg1, f32 arg2, void* arg3) {
