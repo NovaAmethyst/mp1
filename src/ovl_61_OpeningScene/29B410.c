@@ -68,7 +68,21 @@ unkObjectStruct* func_800F6804_29B634(unkGlobalStruct_00* arg0) {
     return temp_s0;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F68D4_29B704);
+void func_800F68D4_29B704(unkObjectStruct* arg) {
+    f32 temp_f22;
+    f32 temp_f24;
+
+    temp_f24 = arg->unk_24;
+    temp_f24 = (1.0f < temp_f24) ? temp_f24 - 1.0f : temp_f24;
+
+    temp_f22 = func_800AEAC0(temp_f24 * 360.0f) * 45;
+    D_80110460[0]->unk_18.x = func_800AEFD0(temp_f22) * arg->unk_18 + func_800AEAC0(temp_f22) * arg->unk_20;
+    D_80110460[0]->unk_18.y = D_80110460[0]->unk_0C.y;
+    D_80110460[0]->unk_18.z = -arg->unk_18 * func_800AEAC0(temp_f22) + arg->unk_20 * func_800AEFD0(temp_f22);
+
+    temp_f24 += 0.05f;
+    arg->unk_24 = temp_f24;
+}
 
 unkObjectStruct* func_800F69F0_29B820(void) {
     unkObjectStruct* temp_s0;
@@ -259,7 +273,6 @@ void func_800FBD7C_2A0BAC(void) {
     func_8004E184();
 }
 
-//INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FBD98_2A0BC8);
 s16 func_800FBD98_2A0BC8(unkOpeningScene_00* arg0, s32 arg1, s32 arg2, Vec3f* arg3, s32 arg4) {
     Vec3f sp10;
     Vec3f sp20;
