@@ -191,7 +191,42 @@ void func_800FB91C_2A074C(void) {
     func_8005E044(0x67, 1, 0x91);
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB97C_2A07AC);
+u32 func_800141FC(s16);
+void func_800FB97C_2A07AC(unkObjectStruct* arg) {
+    s32 i;
+    s32 temp_s1;
+    Process* temp_a0;
+
+    temp_s1 = 0;
+    if (func_80072718() == 0) {
+        if (D_800C572F == 0) {
+            arg->unk_24 -= 1.0f;
+            for (i = 0; i < 4; ++i) {
+                if (func_800141FC(i) == 0) {
+                    continue;
+                }
+                if (D_800F5460[i] & 0x1000) {
+                    D_800FD738 = 1;
+                    temp_s1 = 1;
+                }
+                break;
+            }
+        }
+        if (D_800FD738) {
+            if (!temp_s1) {
+                func_80072724(0xFF, 0xFF, 0xFF);
+            } else {
+                func_80072724(0, 0, 0);
+                func_800601D4(0x50);
+                func_800726AC(0, 0x28);
+            }
+            temp_a0 = D_800FD730[1];
+            temp_a0->stat &= 0xFFFE;
+            EndProcess(temp_a0);
+            arg->func_ptr = &func_800FB91C_2A074C;
+        }
+    }
+}
 
 void func_8004B1B8(void);
 
