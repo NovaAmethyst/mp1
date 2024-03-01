@@ -52,7 +52,7 @@ void func_800F6788_29B5B8(unkObjectStruct* arg0) {
 
     arg0->unk_4C[1] = 0x50;
 
-    func_800FBD48_2A0B78(D_80110460[0], D_80110448[arg0->unk_4C[0]] + 1, 40.0f);
+    func_800FBD48_2A0B78(D_80110460[0], &D_80110448[arg0->unk_4C[0]]->coords, 40.0f);
 }
 
 unkObjectStruct* func_800F6804_29B634(unkGlobalStruct_00* arg0) {
@@ -77,7 +77,7 @@ void func_800F68D4_29B704(unkObjectStruct* arg) {
 
     temp_f22 = func_800AEAC0(temp_f24 * 360.0f) * 45;
     D_80110460[0]->unk_18.x = func_800AEFD0(temp_f22) * arg->unk_18 + func_800AEAC0(temp_f22) * arg->unk_20;
-    D_80110460[0]->unk_18.y = D_80110460[0]->unk_0C.y;
+    D_80110460[0]->unk_18.y = D_80110460[0]->coords.y;
     D_80110460[0]->unk_18.z = -arg->unk_18 * func_800AEAC0(temp_f22) + arg->unk_20 * func_800AEFD0(temp_f22);
 
     temp_f24 += 0.05f;
@@ -86,13 +86,13 @@ void func_800F68D4_29B704(unkObjectStruct* arg) {
 
 unkObjectStruct* func_800F69F0_29B820(void) {
     unkObjectStruct* temp_s0;
-    unkOpeningScene_01** temp_s1;
+    Object** temp_s1;
 
     temp_s0 = func_8005D384(0x1000, 0, 0, -1, func_800F68D4_29B704);
     temp_s1 = &D_80110460[0];
-    func_800A0E80(&temp_s1[0]->unk_18, D_800FD6D0, &temp_s1[0]->unk_0C);
+    func_800A0E80(&temp_s1[0]->unk_18, D_800FD6D0, &temp_s1[0]->coords);
     func_8005D96C(temp_s0, 0.0f, 0.0f, 0.0f);
-    func_8005D97C(temp_s0, D_80110460[0]->unk_0C.x, D_80110460[0]->unk_0C.y, D_80110460[0]->unk_0C.z);
+    func_8005D97C(temp_s0, D_80110460[0]->coords.x, D_80110460[0]->coords.y, D_80110460[0]->coords.z);
     func_8005D95C(temp_s0, D_80110460[0]->unk_18.x, D_80110460[0]->unk_18.y, D_80110460[0]->unk_18.z);
 
     temp_s0->unk_4C[0] = 6;
@@ -107,7 +107,87 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F7E50_29CC80);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F86D0_29D500);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F8D3C_29DB6C);
+void guNormalize(Vec3f*, f32*, f32*);                  /* extern */
+
+void func_800F8D3C_29DB6C(void) {
+    Vec3f sp18;
+    Vec3f sp28;
+    Vec3f sp38;
+    Vec3f sp48;
+    Vec3f sp58;
+    Vec3f sp68;
+    Vec3f sp78;
+    f32 temp_f20;
+    s32 i;
+
+    sp18 = D_800FD550;
+    sp28 = D_800FD55C;
+    sp38 = D_800FD4D0;
+    sp48 = D_800FD568;
+
+    func_800FC48C_2A12BC(sp18.x, sp18.y, sp18.z);
+    func_800FC4C0_2A12F0(sp28.x, sp28.y, sp28.z);
+    func_800FC4F4_2A1324(0.0f, 1.0f, 0.0f);
+    func_800FB7F8_2A0628(30.0f, 10.0f, 8000.0f);
+
+    for (i = 0; i < 6; ++i) {
+        func_8003E664(*(i + D_80110448));
+    }
+
+    func_800A0D50(&D_80110460[0]->coords, &sp48);
+    func_800A0E80(&D_80110460[0]->unk_18, D_800FD6D0, &D_80110460[0]->coords);
+    func_800A0D50(&sp78, &D_80110460[0]->coords);
+    func_800A0D00(&sp58, D_80110460[0]->coords.x - D_800FD6D0[0].x, 0.0f,
+                  D_80110460[0]->coords.z - D_800FD6D0[0].z);
+    func_800A14F0(&sp68, &sp58, &sp38);
+    guNormalize(&sp68, &sp68.y, &sp68.z);
+
+    func_8003E8B8(D_80110460[0], -1, 0, 8, 2U);
+    SleepProcess(8);
+
+    func_800A0D50(&sp58, D_800FD6D0);
+    func_800FBD48_2A0B78(D_80110460[0], &sp58, 20.0f);
+    SleepProcess(0x1E);
+
+    temp_f20 = 50.0f;
+    func_800A0D00(&sp58, sp68.x * temp_f20 + sp78.x, sp68.y * temp_f20 + sp78.y,
+                  sp68.z * temp_f20 + sp78.z);
+    func_800FBD48_2A0B78(D_80110460[0], &sp58, 20.0f);
+    SleepProcess(0x14);
+
+    func_8003E8B8(D_80110460[0], 2, 0, 8, 2U);
+    func_800FBD14_2A0B44(D_80110460[0], &sp58, 50.0f);
+    SleepProcess(0xA);
+
+    func_800FC5CC_2A13FC((void* )0x43E, 0);
+    SleepProcess(0x28);
+
+    temp_f20 = -50.0f;
+    func_800A0D00(&sp58, sp68.x * temp_f20 + sp78.x, sp68.y * temp_f20 + sp78.y,
+                  sp68.z * temp_f20 + sp78.z);
+    func_800FBD48_2A0B78(D_80110460[0], &sp58, 20.0f);
+    SleepProcess(0x14);
+
+    func_8003E8B8(D_80110460[0], 2, 0, 8, 2U);
+    func_800FBD14_2A0B44(D_80110460[0], &sp58, 100.0f);
+    SleepProcess(0x28);
+
+    func_800FC724_2A1554();
+    SleepProcess(0x3C);
+
+    func_800FC5CC_2A13FC((void* )0x43F, 0);
+    temp_f20 = 0.0f;
+    func_800A0D00(&sp58, sp68.x * temp_f20 + sp78.x, sp68.y * temp_f20 + sp78.y,
+                  sp68.z * temp_f20 + sp78.z);
+    func_800FBD48_2A0B78(D_80110460[0], &sp58, 20.0f);
+    SleepProcess(0x14);
+
+    func_8003E8B8(D_80110460[0], 2, 0, 8, 2U);
+    func_800FBD14_2A0B44(D_80110460[0], &sp58, 50.0f);
+    SleepProcess(0x32);
+
+    func_8003E81C(*D_80110460, -1, 2U);
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F916C_29DF9C);
 
@@ -294,7 +374,7 @@ Object* func_800FBCC0_2A0AF0(s32 arg0, void* arg1) {
     return temp_v0;
 }
 
-unkObjectStruct* func_800FBD14_2A0B44(unkObjectStruct* arg0, Vec3f* arg1, f32 arg2) {
+unkObjectStruct* func_800FBD14_2A0B44(Object* arg0, Vec3f* arg1, f32 arg2) {
     return func_8004E3E0(0, arg1, arg2, arg0);
 }
 
