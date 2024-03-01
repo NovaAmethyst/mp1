@@ -589,7 +589,19 @@ void func_800FCAB0_2A18E0(unkObjectStruct* arg) {
     arg->unk_24 = temp_f20;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCB9C_2A19CC);
+unkObjectStruct* func_800FCB9C_2A19CC(s32 arg0) {
+    f32 temp_f0;
+    s16 temp_s2;
+    unkObjectStruct* temp_v0;
+
+    temp_s2 = func_800FCE9C_2A1CCC();
+    func_800FCECC_2A1CFC(0U, 0U, 0U, 0xFFU);
+    temp_v0 = func_8005D384(0x1000, 0U, 0U, -1, func_800FCAB0_2A18E0);
+    temp_f0 = (f32) arg0;
+    func_8005D96C(temp_v0, temp_f0, temp_f0, 0.0f);
+    D_800FD780.unk_00 = temp_s2;
+    return temp_v0;
+}
 
 void func_800FCC3C_2A1A6C(unkObjectStruct* arg) {
     f32 temp_f2;
@@ -632,9 +644,10 @@ void func_800FCDCC_2A1BFC(unkOpeningScene_01** arg0) {
 
     temp_v1 = arg0[0]++;
     temp_v1->unk_00 = 0xFA000000;
-    temp_v1->unk_04 = (void* ) ((D_800FD780[2] << 0x18) |
-                                (D_800FD780[3] << 0x10) |
-                                (D_800FD780[4] << 8) | D_800FD780[5]);
+    temp_v1->unk_04 = (void* ) ((D_800FD780.unk_02[0] << 0x18) |
+                                (D_800FD780.unk_02[1] << 0x10) |
+                                (D_800FD780.unk_02[2] << 8) |
+                                D_800FD780.unk_02[3]);
 
     temp_v1 = arg0[0]++;
     temp_v1->unk_00 = 0xF65003C0;
@@ -646,10 +659,10 @@ s16 func_800FCE9C_2A1CCC(void) {
 }
 
 void func_800FCECC_2A1CFC(u8 arg0, u8 arg1, u8 arg2, u8 arg3) {
-    D_800FD780[2] = arg0;
-    D_800FD780[3] = arg1;
-    D_800FD780[4] = arg2;
-    D_800FD780[5] = arg3;
+    D_800FD780.unk_02[0] = arg0;
+    D_800FD780.unk_02[1] = arg1;
+    D_800FD780.unk_02[2] = arg2;
+    D_800FD780.unk_02[3] = arg3;
 }
 
 void func_800FCEE8_2A1D18(f32 arg0) {
