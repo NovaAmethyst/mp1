@@ -625,7 +625,18 @@ void func_800FCC3C_2A1A6C(unkObjectStruct* arg) {
     arg->unk_24 = temp_f20;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCD20_2A1B50);
+unkObjectStruct* func_800FCD20_2A1B50(s32 arg0) {
+    s16 temp_s2;
+    unkObjectStruct* temp_v0;
+
+    temp_s2 = func_800FCE9C_2A1CCC();
+    func_800FCECC_2A1CFC(0U, 0U, 0U, 0xFFU);
+    func_800FCEE8_2A1D18(0.0f);
+    temp_v0 = func_8005D384(0x1000, 0U, 0U, -1, func_800FCC3C_2A1A6C);
+    func_8005D96C(temp_v0, 0.0f, (f32) arg0, 0.0f);
+    D_800FD780.unk_00 = temp_s2;
+    return temp_v0;
+}
 
 void func_800FCDCC_2A1BFC(unkOpeningScene_01** arg0) {
     unkOpeningScene_01* temp_v1;

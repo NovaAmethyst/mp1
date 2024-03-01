@@ -61,6 +61,7 @@ void func_800FC758_2A1588(void);
 void func_800FCAB0_2A18E0(unkObjectStruct*);
 unkObjectStruct* func_800FCB9C_2A19CC(s32);
 void func_800FCC3C_2A1A6C(unkObjectStruct*);
+unkObjectStruct* func_800FCD20_2A1B50(s32);
 void func_800FCDCC_2A1BFC(unkOpeningScene_01**);
 s16 func_800FCE9C_2A1CCC(void);
 void func_800FCECC_2A1CFC(u8, u8, u8, u8);
