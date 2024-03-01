@@ -641,7 +641,9 @@ void func_800FCDCC_2A1BFC(unkOpeningScene_01** arg0) {
     temp_v1->unk_04 = NULL;
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCE9C_2A1CCC);
+s16 func_800FCE9C_2A1CCC(void) {
+    return func_8002451C(0, &func_800FCDCC_2A1BFC, 2);
+}
 
 void func_800FCECC_2A1CFC(u8 arg0, u8 arg1, u8 arg2, u8 arg3) {
     D_800FD780[2] = arg0;

@@ -56,12 +56,14 @@ void func_800FC758_2A1588(void);
 void func_800FCAB0_2A18E0(unkObjectStruct*);
 void func_800FCC3C_2A1A6C(unkObjectStruct*);
 void func_800FCDCC_2A1BFC(unkOpeningScene_01**);
+s16 func_800FCE9C_2A1CCC(void);
 void func_800FCECC_2A1CFC(u8, u8, u8, u8);
 void func_800FCEE8_2A1D18(f32);
 
 // extern functions
 void guNormalize(Vec3f*, f32*, f32*);
 u32 func_800141FC(s16);
+s16 func_8002451C(s32, void*, s32);
 void func_8004B1B8(void);
 s32 func_8004E184(void);
 void func_8004E154(void);
