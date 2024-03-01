@@ -52,16 +52,20 @@ void func_800F6788_29B5B8(unkObjectStruct* arg0) {
 
     arg0->unk_4C[1] = 0x50;
 
-    func_800FBD48_2A0B78(D_80110460[0], &D_80110448[arg0->unk_4C[0]]->coords, 40.0f);
+    func_800FBD48_2A0B78(D_80110460[0], &D_80110448[arg0->unk_4C[0]]->coords,
+                         40.0f);
 }
 
-unkObjectStruct* func_800F6804_29B634(unkGlobalStruct_00* arg0) {
+unkObjectStruct* func_800F6804_29B634(Object* arg0) {
     unkObjectStruct* temp_s0;
 
     temp_s0 = func_8005D384(0x1000, 0, 0, -1, &func_800F6788_29B5B8);
     func_8005D96C(temp_s0, 0, 0, 0);
-    func_8005D97C(temp_s0, arg0->unk_18 + arg0->unk_0C, arg0->unk_1C + arg0->unk_10, arg0->unk_20.floatingPoint + arg0->unk_14);
-    func_8005D95C(temp_s0, D_80110450->unk_0C, D_80110450->unk_10, D_80110450->unk_14);
+    func_8005D97C(temp_s0, arg0->unk_18.x + arg0->coords.x,
+                  arg0->unk_18.y + arg0->coords.y,
+                  arg0->unk_18.z + arg0->coords.z);
+    func_8005D95C(temp_s0, D_80110450->unk_0C, D_80110450->unk_10,
+                  D_80110450->unk_14);
     temp_s0->unk_4C[0] = 2;
     temp_s0->unk_4C[1] = 48;
     temp_s0->unk_50 = arg0;
@@ -76,9 +80,11 @@ void func_800F68D4_29B704(unkObjectStruct* arg) {
     temp_f24 = (1.0f < temp_f24) ? temp_f24 - 1.0f : temp_f24;
 
     temp_f22 = func_800AEAC0(temp_f24 * 360.0f) * 45;
-    D_80110460[0]->unk_18.x = func_800AEFD0(temp_f22) * arg->unk_18 + func_800AEAC0(temp_f22) * arg->unk_20;
+    D_80110460[0]->unk_18.x = func_800AEFD0(temp_f22) * arg->unk_18 +
+                              func_800AEAC0(temp_f22) * arg->unk_20;
     D_80110460[0]->unk_18.y = D_80110460[0]->coords.y;
-    D_80110460[0]->unk_18.z = -arg->unk_18 * func_800AEAC0(temp_f22) + arg->unk_20 * func_800AEFD0(temp_f22);
+    D_80110460[0]->unk_18.z = -arg->unk_18 * func_800AEAC0(temp_f22) +
+                              arg->unk_20 * func_800AEFD0(temp_f22);
 
     temp_f24 += 0.05f;
     arg->unk_24 = temp_f24;
@@ -92,8 +98,10 @@ unkObjectStruct* func_800F69F0_29B820(void) {
     temp_s1 = &D_80110460[0];
     func_800A0E80(&temp_s1[0]->unk_18, D_800FD6D0, &temp_s1[0]->coords);
     func_8005D96C(temp_s0, 0.0f, 0.0f, 0.0f);
-    func_8005D97C(temp_s0, D_80110460[0]->coords.x, D_80110460[0]->coords.y, D_80110460[0]->coords.z);
-    func_8005D95C(temp_s0, D_80110460[0]->unk_18.x, D_80110460[0]->unk_18.y, D_80110460[0]->unk_18.z);
+    func_8005D97C(temp_s0, D_80110460[0]->coords.x, D_80110460[0]->coords.y,
+                  D_80110460[0]->coords.z);
+    func_8005D95C(temp_s0, D_80110460[0]->unk_18.x, D_80110460[0]->unk_18.y,
+                  D_80110460[0]->unk_18.z);
 
     temp_s0->unk_4C[0] = 6;
     temp_s0->unk_50 = temp_s1[0];
@@ -106,8 +114,6 @@ INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F6AB8_29B8E8);
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F7E50_29CC80);
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F86D0_29D500);
-
-void guNormalize(Vec3f*, f32*, f32*);                  /* extern */
 
 void func_800F8D3C_29DB6C(void) {
     Vec3f sp18;
@@ -240,8 +246,6 @@ void func_800FB79C_2A05CC(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2) {
     func_800FC4F4_2A1324(arg2->x, arg2->y, arg2->z);
 }
 
-extern Vec3f D_800FD6D0[];
-
 void func_800FB7F8_2A0628(f32 x, f32 y, f32 z) {
     D_800FD6D0[3].x = x;
     D_800FD6D0[3].y = y;
@@ -271,7 +275,6 @@ void func_800FB91C_2A074C(void) {
     func_8005E044(0x67, 1, 0x91);
 }
 
-u32 func_800141FC(s16);
 void func_800FB97C_2A07AC(unkObjectStruct* arg) {
     s32 i;
     s32 temp_s1;
@@ -307,8 +310,6 @@ void func_800FB97C_2A07AC(unkObjectStruct* arg) {
         }
     }
 }
-
-void func_8004B1B8(void);
 
 s32 func_800FBAC0_2A08F0(void) {
     func_800178A0(1);
@@ -382,13 +383,12 @@ void func_800FBD48_2A0B78(void* arg0, Vec3f* arg1, f32 arg2) {
     func_8004EE14(0, arg1, arg2, arg0);
 }
 
-s32 func_8004E184(void);                                  /* extern */
-
 void func_800FBD7C_2A0BAC(void) {
     func_8004E184();
 }
 
-s16 func_800FBD98_2A0BC8(unkOpeningScene_00* arg0, s32 arg1, s32 arg2, Vec3f* arg3, s32 arg4) {
+s16 func_800FBD98_2A0BC8(unkOpeningScene_00* arg0, s32 arg1, s32 arg2,
+                         Vec3f* arg3, s32 arg4) {
     Vec3f sp10;
     Vec3f sp20;
     u16 temp_s3;
@@ -479,7 +479,8 @@ void func_800FC2B8_2A10E8(Vec3f* arg0, Vec3f* arg1, f32 arg2, void* arg3) {
         arg2 = 1.0f;
     }
 
-    func_800A0D00(&sp10, arg1->x - arg0->x, arg1->y - arg0->y, arg1->z - arg0->z);
+    func_800A0D00(&sp10, arg1->x - arg0->x, arg1->y - arg0->y,
+                  arg1->z - arg0->z);
     func_800A0D00(arg3, sp10.x * arg2 + arg0->x, sp10.y * arg2 + arg0->y,
                   sp10.z * arg2 + arg0->z);
 }
@@ -624,8 +625,6 @@ void func_800FCECC_2A1CFC(u8 arg0, u8 arg1, u8 arg2, u8 arg3) {
     D_800FD780[4] = arg2;
     D_800FD780[5] = arg3;
 }
-
-extern f32 D_800FD794;
 
 void func_800FCEE8_2A1D18(f32 arg0) {
     D_800FD794 = arg0;
