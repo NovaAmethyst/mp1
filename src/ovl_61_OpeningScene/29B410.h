@@ -6,6 +6,11 @@ typedef struct unkOpeningScene_00 {
     /* 0x04 */ void* unk_04;
 } unkOpeningScene_00; // sizeof 0x08
 
+typedef struct unkOpeningScene_01 {
+    /* 0x00 */ s32 unk_00;
+    /* 0x04 */ void* unk_04;
+} unkOpeningScene_01; // sizeof 0x08
+
 void func_800F65E0_29B410(void);
 void func_800F6788_29B5B8(unkObjectStruct*);
 unkObjectStruct* func_800F6804_29B634(Object*);
@@ -50,6 +55,7 @@ void func_800FC724_2A1554(void);
 void func_800FC758_2A1588(void);
 void func_800FCAB0_2A18E0(unkObjectStruct*);
 void func_800FCC3C_2A1A6C(unkObjectStruct*);
+void func_800FCDCC_2A1BFC(unkOpeningScene_01**);
 void func_800FCECC_2A1CFC(u8, u8, u8, u8);
 void func_800FCEE8_2A1D18(f32);
 
@@ -70,6 +76,7 @@ extern s16 D_800C5972;
 extern s16 D_800C59A6;
 extern u16 D_800F5460[];
 extern s8 D_800F64F2;
+extern s32 D_800FD450;
 extern Vec3s D_800FD4A0;
 extern Vec3s D_800FD4AC;
 extern Vec3f D_800FD4D0;

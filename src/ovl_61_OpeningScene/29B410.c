@@ -615,7 +615,31 @@ void func_800FCC3C_2A1A6C(unkObjectStruct* arg) {
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCD20_2A1B50);
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCDCC_2A1BFC);
+void func_800FCDCC_2A1BFC(unkOpeningScene_01** arg0) {
+    unkOpeningScene_01* temp_v1;
+
+    temp_v1 = arg0[0]++;
+    temp_v1->unk_00 = 0xDE000000;
+    temp_v1->unk_04 = &D_800FD450;
+
+    temp_v1 = arg0[0]++;
+    temp_v1->unk_00 = 0xE200001C;
+    temp_v1->unk_04 = (void* )0x5041C8;
+
+    temp_v1 = arg0[0]++;
+    temp_v1->unk_00 = 0xFCFFFFFF;
+    temp_v1->unk_04 = (void* )0xFFFDF6FB;
+
+    temp_v1 = arg0[0]++;
+    temp_v1->unk_00 = 0xFA000000;
+    temp_v1->unk_04 = (void* ) ((D_800FD780[2] << 0x18) |
+                                (D_800FD780[3] << 0x10) |
+                                (D_800FD780[4] << 8) | D_800FD780[5]);
+
+    temp_v1 = arg0[0]++;
+    temp_v1->unk_00 = 0xF65003C0;
+    temp_v1->unk_04 = NULL;
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FCE9C_2A1CCC);
 
