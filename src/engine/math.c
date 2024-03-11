@@ -1,6 +1,6 @@
 #include "common.h"
 #include "math.h"
-#include "gu.h"
+#include "PR/gu.h"
 
 
 extern f32 D_800C3290;

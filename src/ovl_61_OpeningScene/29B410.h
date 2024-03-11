@@ -16,15 +16,29 @@ typedef struct unkOpeningScene_02 {
     /* 0x02 */ u8 unk_02[4];
 } unkOpeningScene_02;
 
+typedef struct unkOpeningScene_03 {
+    /* 0x00 */ char unk_00[0x0C];
+    /* 0x0C */ Vec3f unk_0C;
+    /* 0x18 */ Vec3f unk_18;
+    /* 0x24 */ Vec3f unk_24;
+} unkOpeningScene_03; // is probably Object
+
+typedef struct unkOpeningScene_04 {
+    /* 0x00 */ Vec3f unk_00;
+    /* 0x0C */ Vec3f unk_0C;
+} unkOpeningScene_04;
+
 void func_800F65E0_29B410(void);
 void func_800F6788_29B5B8(unkObjectStruct*);
 unkObjectStruct* func_800F6804_29B634(Object*);
 void func_800F68D4_29B704(unkObjectStruct*);
 unkObjectStruct* func_800F69F0_29B820(void);
+void func_800F86D0_29D500(void);
 void func_800F8D3C_29DB6C(void);
+void func_800F916C_29DF9C(void);
 void func_800FB358_2A0188(void);
 void func_800FB608_2A0438(void);
-void func_800FB670_2A04A0(Vec3s*, Vec3s*, f32);
+void func_800FB670_2A04A0(Vec3f*, Vec3f*, f32);
 void func_800FB79C_2A05CC(Vec3f*, Vec3f*, Vec3f*);
 void func_800FB7F8_2A0628(f32, f32, f32);
 void func_800FB810_2A0640(unkObjectStruct*);
@@ -68,7 +82,6 @@ void func_800FCECC_2A1CFC(u8, u8, u8, u8);
 void func_800FCEE8_2A1D18(f32);
 
 // extern functions
-void guNormalize(Vec3f*, f32*, f32*);
 u32 func_800141FC(s16);
 s16 func_8002451C(s32, void*, s32);
 void func_8004B1B8(void);
@@ -85,17 +98,26 @@ extern s16 D_800C5972;
 extern s16 D_800C59A6;
 extern u16 D_800F5460[];
 extern s8 D_800F64F2;
+extern s32 D_800FD050;
 extern s32 D_800FD450;
-extern Vec3s D_800FD4A0;
-extern Vec3s D_800FD4AC;
+extern Vec3f D_800FD4A0;
+extern Vec3f D_800FD4AC;
 extern Vec3f D_800FD4D0;
 extern Vec3f D_800FD4DC;
+extern Vec3f D_800FD4E8;
+extern Vec3f D_800FD508;
+extern Vec3f D_800FD514;
 extern Vec3f D_800FD520;
+extern Vec3f D_800FD52C;
+extern Vec3f D_800FD538;
+extern Vec3f D_800FD544;
 extern Vec3f D_800FD550;
 extern Vec3f D_800FD55C;
 extern Vec3f D_800FD568;
+extern unkOpeningScene_04 D_800FD574;
+extern unkOpeningScene_04 D_800FD58C;
 extern Vec3f D_800FD6D0[];
-extern unkGlobalStruct_00 D_800FD6DC; // Need to check type
+extern Vec3f D_800FD6DC; // Need to check type
 extern unkGlobalStruct_00 D_800FD6E8; // Need to check type
 extern s32 D_800FD700;
 extern s16 D_800FD702[]; // Need to check type
@@ -103,11 +125,14 @@ extern u16 D_800FD708;
 extern s16 D_800FD710[];
 extern Process* D_800FD730[];
 extern s32 D_800FD738;
+extern unkObjectStruct* D_800FD740[];
 extern unkOpeningScene_02 D_800FD780;
 extern f32 D_800FD794;
 extern s32 D_801102B8[];
 extern void* D_80110300[];
+extern unkObjectStruct* D_8011033C[];
 extern void* D_80110400[];
 extern Object* D_80110448[];
-extern unkGlobalStruct_00* D_80110450;
+extern Object* D_80110454[];
+extern Object* D_8011045C[];
 extern Object* D_80110460[];
