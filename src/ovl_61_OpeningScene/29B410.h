@@ -72,6 +72,7 @@ void func_800FC5CC_2A13FC(void*, s32);
 void func_800FC6BC_2A14EC(void*, s32);
 void func_800FC724_2A1554(void);
 void func_800FC758_2A1588(void);
+void func_800FC77C_2A15AC(Vec3f*, f32*, f32, Vec3f*);
 void func_800FCAB0_2A18E0(unkObjectStruct*);
 unkObjectStruct* func_800FCB9C_2A19CC(s32);
 void func_800FCC3C_2A1A6C(unkObjectStruct*);
@@ -83,6 +84,7 @@ void func_800FCEE8_2A1D18(f32);
 
 // extern functions
 u32 func_800141FC(s16);
+f32 func_80022D9C(f32* a, f32* b, f32 arg2);
 s16 func_8002451C(s32, void*, s32);
 void func_8004B1B8(void);
 s32 func_8004E184(void);

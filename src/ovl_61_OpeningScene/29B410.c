@@ -725,8 +725,20 @@ void func_800FC758_2A1588(void) {
     SleepProcess(2);
 }
 
+void func_800FC77C_2A15AC(Vec3f* arg0, f32* arg1, f32 arg2, Vec3f* arg3) {
+    Mat4 sp10;
+    s32 i;
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC77C_2A15AC);
+    for (i = 0; i < 4; ++i) {
+        sp10[0][i] = arg0[i].x;
+        sp10[1][i] = arg0[i].y;
+        sp10[2][i] = arg0[i].z;
+        sp10[3][i] = arg1[i];
+    }
+    arg3->x = func_80022D9C(sp10[0], sp10[3], arg2);
+    arg3->y = func_80022D9C(sp10[1], sp10[3], arg2);
+    arg3->z = func_80022D9C(sp10[2], sp10[3], arg2);
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC850_2A1680);
 
