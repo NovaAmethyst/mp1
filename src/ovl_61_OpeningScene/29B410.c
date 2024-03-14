@@ -275,7 +275,92 @@ void func_800F7E50_29CC80(void) {
     func_8003E81C(D_80110460[0], -1, 2U);
 }
 
+#ifdef NON_MATCHING // matching but missing nop
+void func_800F86D0_29D500(void) {
+    Vec3f sp20;
+    Vec3f sp30;
+    Vec3f sp40;
+    Vec3f sp50;
+    Vec3f sp60;
+    Vec3f sp70;
+    Vec3f sp80;
+    Mat4 sp90;
+    Vec3f spD0;
+    Vec3f spE0;
+    f32 temp_f0;
+    f32 temp_f1;
+    s32 i;
+
+    sp80 = D_800FD4DC;
+    temp_f1 = 200.0f;
+    spD0 = D_800FD544;
+    spE0 = D_800FD4E8;
+    func_800FC48C_2A12BC(spD0.x, spD0.y, spD0.z);
+    func_800FC4C0_2A12F0(spE0.x, spE0.y, spE0.z);
+    func_800FC4F4_2A1324(0.0f, 1.0f, 0.0f);
+    func_800FB7F8_2A0628(45.0f, 10.0f, 8000.0f);
+    func_800A0D50(&D_80110460[0]->coords, &sp80);
+    func_800A0D00(&sp40, -D_800FD6D0[0].x, D_800FD6D0[0].y, -D_800FD6D0[0].z);
+    func_800A0E80(&D_80110460[0]->unk_18, &sp40, &D_80110460[0]->coords);
+    for (i = 0; i < 6; ++i) {
+        func_800A0D50(&sp20, &sp80);
+        sp20.y = 0.0f;
+        func_800A0D50(&sp30, D_800FD6D0);
+        sp30.y = 0.0f;
+        func_800A0D00(&sp70, sp30.x - sp20.x, 0.0f, sp30.z - sp20.z);
+        guNormalize(&sp70.x, &sp70.y, &sp70.z);
+        func_800A0D00(&sp50, temp_f1 * sp70.x, temp_f1 * sp70.y, temp_f1 * sp70.z);
+        guRotateF(sp90, i * 180.0f / 6.0f + 90.0f + 22.5f, 0.0f, 1.0f, 0.0f);
+        guMtxXFMF(sp90, sp50.x, sp50.y, sp50.z, &sp60.x, &sp60.y, &sp60.z);
+        func_800A0D00(&sp40, sp60.x + sp20.x, sp60.y + sp20.y, sp60.z + sp20.z);
+        func_800A0D50(&D_80110448[i]->coords, &sp40);
+        func_800A0E80(&D_80110448[i]->unk_18, &D_80110448[6]->coords, &D_80110448[i]->coords);
+    }
+    for (i = 0; i < 6; ++i) {
+        if (i - 2 >= 2U) {
+            func_800A0D50(&sp40, &D_80110448[2]->coords);
+            func_800A0E80(&D_80110448[i]->unk_18, &sp40, &D_80110448[i]->coords);
+        }
+    }
+    func_800A0E80(&D_80110448[2]->unk_18, &D_80110448[5]->coords, &D_80110448[2]->coords);
+    func_800A0E80(&D_80110448[3]->unk_18, &D_80110448[0]->coords, &D_80110448[3]->coords);
+    func_800A0D00(&D_80110448[6]->coords, 0.0f, 0.0f, 300.0f);
+    func_8003E8B8(D_80110448[6], 4, 0x14, 0, 0U);
+    for (i = 0xF; i < 0x1F; ++i) {
+        temp_f0 = 1 - (i / 30.0f) * (i / 30.0f);
+        D_80110460[0]->coords.y = 0.0f;
+        D_80110460[0]->unk_30 = temp_f0 * 80.0f * 5.0f;
+        SleepProcess(0);
+    }
+    D_80110460[0]->coords.y = -13.333334f;
+    func_800FC724_2A1554();
+    func_8003E8B8(D_80110460[0], -1, 0x14, 0, 2U);
+    for (i = 0; i < 6; ++i) {
+        func_800FBD48_2A0B78(D_80110448[i], &D_80110448[6]->coords, 10.0f);
+    }
+    func_8003E8B8(D_80110448[2], 0, 0, 0xA, 2U);
+    func_8003E8B8(D_80110448[4], 0, 0, 0xA, 2U);
+    func_8003E8B8(D_80110448[0], 0, 0, 0xA, 2U);
+    func_8003E8B8(D_80110448[1], 0, 0, 0xA, 2U);
+    func_8003E8B8(D_80110448[3], 5, 0, 0xA, 2U);
+    func_8003E8B8(D_80110448[5], 7, 0, 0xA, 2U);
+    SleepProcess(1);
+    D_80110460[0]->coords.y = 0.0f;
+    SleepProcess(1);
+    func_8004F00C(D_80110448[6], 4.0f, -1.2f);
+    SleepProcess(8);
+    func_8003E8B8(D_80110448[2], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[4], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[0], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[1], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[3], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[5], -1, 0, 0x14, 2U);
+    SleepProcess(0x28);
+    func_800FC6BC_2A14EC((void* )0x43D, 0x78);
+}
+#else
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F86D0_29D500);
+#endif
 
 void func_800F8D3C_29DB6C(void) {
     Vec3f sp18;
