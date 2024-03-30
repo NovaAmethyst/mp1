@@ -485,7 +485,19 @@ void func_800FB608_2A0438(void) {
     }
 }
 
+#ifdef NON_MATCHING // issue with nops with or without the --vr4300mul-off flag
+void func_800FB670_2A04A0(Vec3f* arg0, Vec3f* arg1, f32 arg2) {
+    func_800FC48C_2A12BC(func_800AEAC0(arg0->y) * func_800AEFD0(arg0->z) * arg2 + arg1->x,
+                         -func_800AEAC0(arg0->x) * arg2 + arg1->y,
+                         func_800AEFD0(arg0->y) * func_800AEFD0(arg0->x) * arg2 + arg1->z);
+    func_800FC4C0_2A12F0(arg1->x, arg1->y, arg1->z);
+    func_800FC4F4_2A1324(func_800AEAC0(arg0->y) * func_800AEAC0(arg0->x),
+                         func_800AEFD0(arg0->x),
+                         func_800AEFD0(arg0->y) * func_800AEAC0(arg0->x));
+}
+#else
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FB670_2A04A0);
+#endif
 
 void func_800FB79C_2A05CC(Vec3f* arg0, Vec3f* arg1, Vec3f* arg2) {
     func_800FC48C_2A12BC(arg0->x, arg0->y, arg0->z);
