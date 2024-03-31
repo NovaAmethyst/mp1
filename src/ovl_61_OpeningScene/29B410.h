@@ -73,6 +73,7 @@ void func_800FC6BC_2A14EC(void*, s32);
 void func_800FC724_2A1554(void);
 void func_800FC758_2A1588(void);
 void func_800FC77C_2A15AC(Vec3f*, f32*, f32, Vec3f*);
+void func_800FC850_2A1680(s16, f32, f32, Vec3f*);
 void func_800FCAB0_2A18E0(unkObjectStruct*);
 unkObjectStruct* func_800FCB9C_2A19CC(s32);
 void func_800FCC3C_2A1A6C(unkObjectStruct*);

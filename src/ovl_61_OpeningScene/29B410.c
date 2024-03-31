@@ -837,7 +837,50 @@ void func_800FC77C_2A15AC(Vec3f* arg0, f32* arg1, f32 arg2, Vec3f* arg3) {
     arg3->z = func_80022D9C(sp10[2], sp10[3], arg2);
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800FC850_2A1680);
+void func_800FC850_2A1680(s16 arg0, f32 arg1, f32 arg2, Vec3f* arg3) {
+    Vec3f sp10[4];
+    f32 sp40[4];
+    f32 temp_f20;
+    s32 temp_a0;
+    unk2C0C0StructA0* temp_a2;
+    s32 temp_v1_2;
+    s32 var_s1;
+    unk2C0C0StructC0* temp_v1;
+
+    temp_v1 = D_800F2B7C[arg0].unk_6C;
+    temp_a2 = &temp_v1->unk_78[1];
+    temp_a0 = temp_v1->unk_6E;
+    temp_v1_2 = temp_a0 - 3;
+    temp_f20 = arg1 / (f32) temp_v1_2;
+    var_s1 = (s32) (arg2 / temp_f20);
+    if ((var_s1 + 1) >= temp_v1_2) {
+        var_s1 = temp_a0 - 4;
+    } else if (var_s1 < 0) {
+        var_s1 = -1;
+    }
+
+    func_800A0D00(&sp10[0],
+                  (f32) temp_a2[var_s1 - 1].unk_00,
+                  (f32) temp_a2[var_s1 - 1].unk_02,
+                  (f32) temp_a2[var_s1 - 1].unk_04);
+    sp40[0] = temp_f20 * (f32) (var_s1 - 1);
+    func_800A0D00(&sp10[1],
+                  (f32) temp_a2[var_s1].unk_00,
+                  (f32) temp_a2[var_s1].unk_02,
+                  (f32) temp_a2[var_s1].unk_04);
+    sp40[1] = temp_f20 * (f32) var_s1;
+    func_800A0D00(&sp10[2],
+                  (f32) temp_a2[var_s1 + 1].unk_00,
+                  (f32) temp_a2[var_s1 + 1].unk_02,
+                  (f32) temp_a2[var_s1 + 1].unk_04);
+    sp40[2] = temp_f20 * (f32) (var_s1 + 1);
+    func_800A0D00(&sp10[3],
+                  (f32) temp_a2[var_s1 + 2].unk_00,
+                  (f32) temp_a2[var_s1 + 2].unk_02,
+                  (f32) temp_a2[var_s1 + 2].unk_04);
+    sp40[3] = temp_f20 * (f32) (var_s1 + 2);
+    func_800FC77C_2A15AC(&sp10[0], &sp40[0], arg2, arg3);
+}
 
 void func_800FCAB0_2A18E0(unkObjectStruct* arg) {
     f32 temp_f2;
