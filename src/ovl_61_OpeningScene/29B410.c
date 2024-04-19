@@ -446,12 +446,11 @@ void func_800F916C_29DF9C(void) {
     unkOpeningScene_04 sp18;
     unkOpeningScene_04 sp30;
     Vec3f sp48;
-    s32 sp58[2];
+    Vec3f sp58;
     f32 temp_f20;
     s32 var_s0;
     s32 var_s1;
     s32 var_s2;
-    char pad[8];
 
     func_800A0D00(&D_80110448[2]->coords, 75.0f, 0.0f, 0.0f);
     func_800A0D00(&D_80110448[4]->coords, -375.0f, 0.0f, 0.0f);
@@ -470,7 +469,7 @@ void func_800F916C_29DF9C(void) {
     func_800FB79C_2A05CC(&sp18.unk_00, &sp30.unk_00, &sp48);
     D_800FD050 = 1;
     for (var_s0 = 0; var_s0 < 6; ++var_s0) {
-        func_800A0D00(&sp58[0], 0.0f, 0.0f, 0.0f);
+        func_800A0D00(&sp58, 0.0f, 0.0f, 0.0f);
         func_800A0D00(&D_80110448[var_s0]->unk_18, 0.0f, 0.0f, 1.0f);
     }
     func_8003E81C(D_80110448[4], 4, 2U);
