@@ -442,7 +442,122 @@ void func_800F8D3C_29DB6C(void) {
     func_8003E81C(D_80110448[6], -1, 2U);
 }
 
-INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F916C_29DF9C);
+void func_800F916C_29DF9C(void) {
+    unkOpeningScene_04 sp18;
+    unkOpeningScene_04 sp30;
+    Vec3f sp48;
+    s32 sp58[2];
+    f32 temp_f20;
+    s32 var_s0;
+    s32 var_s1;
+    s32 var_s2;
+    char pad[8];
+
+    func_800A0D00(&D_80110448[2]->coords, 75.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[4]->coords, -375.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[0]->coords, 225.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[1]->coords, 375.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[5]->coords, -225.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[3]->coords, -75.0f, 0.0f, 0.0f);
+    func_800A0D00(&D_80110448[6]->coords, 0.0f, 0.0f, -600.0f);
+    func_8003E664(D_80110448[6]);
+    for (var_s0 = 0; var_s0 < 6; ++var_s0) {
+        func_8003E5E0(D_80110448[var_s0]);
+    }
+    sp18 = D_800FD574;
+    sp30 = D_800FD58C;
+    sp48 = D_800FD4D0;
+    func_800FB79C_2A05CC(&sp18.unk_00, &sp30.unk_00, &sp48);
+    D_800FD050 = 1;
+    for (var_s0 = 0; var_s0 < 6; ++var_s0) {
+        func_800A0D00(&sp58[0], 0.0f, 0.0f, 0.0f);
+        func_800A0D00(&D_80110448[var_s0]->unk_18, 0.0f, 0.0f, 1.0f);
+    }
+    func_8003E81C(D_80110448[4], 4, 2U);
+    func_8003E81C(D_80110448[5], 5, 2U);
+    func_8003E81C(D_80110448[3], 3, 2U);
+    func_8003E81C(D_80110448[1], -1, 2U);
+    var_s2 = 0x78;
+    for (var_s0 = 0; var_s0 < var_s2; ++var_s0) {
+        temp_f20 = var_s0 * 0.0013888889f;
+        SleepProcess(0);
+        func_800FC2B8_2A10E8(&sp18.unk_00, &sp18.unk_0C, temp_f20, &D_800FD6D0[0]);
+        func_800FC2B8_2A10E8(&sp30.unk_00, &sp30.unk_0C, temp_f20, &D_800FD6D0[1]);
+        if (var_s0 == 0x64) {
+            func_8003E8B8(D_80110448[4], -1, 0, 0x14, 2U);
+        }
+    }
+    var_s1 = var_s2;
+    var_s2 = 0xF0;
+    var_s0 = var_s1;
+    while (var_s0 < var_s2) {
+        temp_f20 = var_s0 * 0.0013888889f;
+        SleepProcess(0);
+        func_800FC2B8_2A10E8(&sp18.unk_00, &sp18.unk_0C, temp_f20, &D_800FD6D0[0]);
+        func_800FC2B8_2A10E8(&sp30.unk_00, &sp30.unk_0C, temp_f20, &D_800FD6D0[1]);
+        if (var_s0 == var_s2 - 4) {
+            func_800FC724_2A1554();
+        }
+        ++var_s0;
+    }
+    func_800FC5CC_2A13FC((void* )0x440, 0);
+    var_s1 = var_s2;
+    var_s2 = 0x168;
+    var_s0 = var_s1;
+    while (var_s0 < var_s2) {
+        temp_f20 = var_s0 * 0.0013888889f;
+        SleepProcess(0);
+        func_800FC2B8_2A10E8(&sp18.unk_00, &sp18.unk_0C, temp_f20, &D_800FD6D0[0]);
+        func_800FC2B8_2A10E8(&sp30.unk_00, &sp30.unk_0C, temp_f20, &D_800FD6D0[1]);
+        if (var_s0 == var_s1 + 0x46) {
+            func_8003E8B8(D_80110448[2], 5, 0, 8, 2U);
+            func_8003E8B8(D_80110448[1], 6, 0, 8, 2U);
+        }
+        if (var_s0 == var_s2 - 4) {
+            func_800FC724_2A1554();
+        }
+        ++var_s0;
+    }
+    func_800FC5CC_2A13FC((void* )0x441, 0);
+    func_8003E8B8(D_80110448[2], -1, 0, 0x14, 2U);
+    func_8003E8B8(D_80110448[1], -1, 0, 0x10, 2U);
+    var_s1 = var_s2;
+    var_s2 = 0x258;
+    var_s0 = var_s1;
+    while (var_s0 < var_s2) {
+        temp_f20 = var_s0 * 0.0013888889f;
+        SleepProcess(0);
+        func_800FC2B8_2A10E8(&sp18.unk_00, &sp18.unk_0C, temp_f20, &D_800FD6D0[0]);
+        func_800FC2B8_2A10E8(&sp30.unk_00, &sp30.unk_0C, temp_f20, &D_800FD6D0[1]);
+        if (var_s0 == var_s1 + 0x28) {
+            func_800FC724_2A1554();
+            func_8003E8B8(D_80110448[0], 5, 0, 8, 2U);
+            func_8003E8B8(D_80110448[1], 6, 0, 0x14, 2U);
+        }
+        if (var_s0 == var_s1 + 0x6E) {
+            func_8003E8B8(D_80110448[0], -1, 0, 0x28, 2U);
+            func_8003E8B8(D_80110448[1], -1, 0, 0x10, 2U);
+        }
+        if (var_s0 == var_s1 + 0xAA) {
+            func_8003E8B8(D_80110448[1], 8, 0, 0x14, 2U);
+        }
+        if (var_s0 == var_s2 - 0x10) {
+            func_8003E8B8(D_80110448[1], -1, 0, 0x10, 2U);
+        }
+        var_s0 += 1;
+    }
+    SleepProcess(0x19);
+    SleepProcess(0xF);
+    func_800FC5CC_2A13FC((void* )0x443, 0);
+    SleepProcess(0x28);
+    func_800FC724_2A1554();
+    func_8003E8B8(D_80110448[1], 4, 0, 8, 2U);
+    SleepProcess(0x3C);
+    D_800FD740[0] = func_800FCD20_2A1B50(0x28);
+    SleepProcess(0x28);
+    func_8005D718(D_800FD740[0]);
+    func_8002456C(D_800FD780.unk_00);
+}
 
 INCLUDE_ASM(s32, "ovl_61_OpeningScene/29B410", func_800F983C_29E66C);
 
